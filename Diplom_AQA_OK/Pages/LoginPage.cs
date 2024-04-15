@@ -1,5 +1,4 @@
 ﻿using Diplom_AQA_OK.Helpers;
-using Diplom_AQA_OK.Pages;
 using OpenQA.Selenium;
 
 namespace Diplom_AQA_OK.Pages
@@ -35,23 +34,10 @@ namespace Diplom_AQA_OK.Pages
         public IWebElement PswInput => WaitsHelper.WaitForExists(PswInputBy);
        public IWebElement LoginInButton => WaitsHelper.WaitForExists(LoginInButtonBy);
 
-        // Комплексные
-        public DashboardPage SuccessFulLogin(string username, string password)
-        {
-            EmailInput.SendKeys(username);
-            PswInput.SendKeys(password);
-            LoginInButton.Click();
+        // Методы действий с элементами
+        public void ClickLoginInButton() => LoginInButton.Click();
 
-            return new DashboardPage(Driver);
-        }
-
-        public LoginPage IncorrectLogin(string username, string password)
-        {
-            EmailInput.SendKeys(username);
-            PswInput.SendKeys(password);
-            LoginInButton.Click();
-
-            return this;
-        }
+        // Методы получения свойств
+        public string GetErrorLabelText() => ErrorLabel.Text.Trim();
     }
 }
