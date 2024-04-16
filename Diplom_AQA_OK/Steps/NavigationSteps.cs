@@ -1,5 +1,4 @@
-﻿using Diplom_AQA_OK.Pages.ProjectPages;
-using Diplom_AQA_OK.Pages;
+﻿using Diplom_AQA_OK.Pages;
 using OpenQA.Selenium;
 using Diplom_AQA_OK.Models;
 using Allure.NUnit.Attributes;
@@ -18,12 +17,6 @@ public class NavigationSteps(IWebDriver driver) : BaseSteps(driver)
     public DashboardPage NavigateToDashboardPage()
     {
         return new DashboardPage(Driver);
-    }
-
-    [AllureStep]
-    public AddProjectPage NavigateToAddProjectPage()
-    {
-        return new AddProjectPage(Driver);
     }
 
     [AllureStep]

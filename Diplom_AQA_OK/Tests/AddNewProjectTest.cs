@@ -6,18 +6,16 @@ namespace Diplom_AQA_OK.Tests;
 
 public class AddNewProjectTest : BaseTest
 {
-  /*  [Test]
-    public void SuccessfulAddProjectTest()
+   [Test]
+    public void SuccessfulAddProjTest()
     {
-        LoginPage _loginPage = new LoginPage(Driver);
-        _loginPage.EmailInput.SendKeys(Configurator.AppSettings.Username);
-        _loginPage.PswInput.SendKeys(Configurator.AppSettings.Password);
-        _loginPage.ClickLoginInButton();
+        Assert.That(_navigationSteps.SuccessfulLogin(Admin).TitleLabel.Displayed);
 
         DashboardPage dashboardPage = new DashboardPage(Driver);
 
-        Assert.That(dashboardPage.IsPageOpened);
+        dashboardPage.SuccessFulAddNewProj("New Test Project","123","test");
+
     }
 
-    */
+
 }

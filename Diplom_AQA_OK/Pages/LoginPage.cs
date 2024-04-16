@@ -10,7 +10,7 @@ namespace Diplom_AQA_OK.Pages
         // Описание элементов
         private static readonly By EmailInputBy = By.CssSelector("[data-testid='textbox-login']");
         private static readonly By PswInputBy = By.CssSelector("[data-testid='textbox-password']");
-        private static readonly By LoginInButtonBy = By.ClassName("button-main");
+        private static readonly By LoginInButtonBy = By.CssSelector("[data-testid='button-login']");
         private static readonly By ErrorLabelBy = By.XPath("//div[@class = 'sc-hiTDLB dpizrC']/p");
 
         // Инициализация класса

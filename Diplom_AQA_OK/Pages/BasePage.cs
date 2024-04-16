@@ -19,7 +19,7 @@ public abstract class BasePage : LoadableComponent<BasePage>
     }
 
     protected abstract string GetEndpoint();
-
+    
     protected override void ExecuteLoad()
     {
         Driver.Navigate().GoToUrl(Configurator.AppSettings.URL + GetEndpoint());
