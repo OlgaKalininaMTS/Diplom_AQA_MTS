@@ -2,34 +2,32 @@
 using Diplom_AQA_OK.Pages;
 using OpenQA.Selenium;
 
-namespace Diplom_AQA_OK.Pages;
-
-public class DashboardPage : BasePage
+namespace Diplom_AQA_OK.Pages
 {
-    private static string END_POINT = "dashboard";
-
-    // Описание элементов
-     private static readonly By TitleLabelBy = By.XPath("//*[contains(text(), 'Thank you for registering!')]");
-    
-    public MenuPage MenuPage;
-
-    // Инициализация класса
-    public DashboardPage(IWebDriver driver) : base(driver)
+    public class DashboardPage(IWebDriver? driver, bool openByURL = false) : BasePage(driver, openByURL)
     {
-        MenuPage = new MenuPage(Driver);
-    }
-   
-    protected override string GetEndpoint()
-    {
-        return END_POINT;
-    }
+        private const string END_POINT = "dashboard";
 
-      public override bool IsPageOpened()
-      {
-          return TitleLabel.Displayed;
+        // Описание элементов
+        private static readonly By TitleLabelBy = By.XPath("//*[contains(text(), 'Thank you for registering!')]");
+
+        protected override bool EvaluateLoadedStatus()
+        {
+            try
+            {
+                return TitleLabel.Displayed;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        protected override string GetEndpoint()
+        {
+            return END_POINT;
+        }
+
+        public IWebElement TitleLabel => WaitsHelper.WaitForExists(TitleLabelBy);
     }
-    
-   
-    // Атомарные Методы
-    public IWebElement TitleLabel => WaitsHelper.WaitForExists(TitleLabelBy);
 }
