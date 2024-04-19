@@ -7,7 +7,9 @@ namespace Diplom_AQA_OK.Tests;
 
 public class AddNewProjectTest : BaseTest
 {
-   [Test]
+    [Test]
+    [Category("Smoke")]
+    [Category("Regression")]
     public void SuccessfulAddProjTest()
     {
         Assert.That(_navigationSteps.SuccessfulLogin(Admin).TitleLabel.Displayed);
@@ -15,5 +17,17 @@ public class AddNewProjectTest : BaseTest
         DashboardPage dashboardPage = new DashboardPage(Driver);
 
         dashboardPage.SuccessFulAddNewProj("New Test Project","123","test");
+    }
+
+    [Test]
+    [Category("Smoke")]
+    [Category("Regression")]
+    public void InvalidAddProjTest()
+    {
+        Assert.That(_navigationSteps.SuccessfulLogin(Admin).TitleLabel.Displayed);
+
+        DashboardPage dashboardPage = new DashboardPage(Driver);
+
+        dashboardPage.IncorrectNewProj("Invalid Test Project", "123456789", "test");
     }
 }

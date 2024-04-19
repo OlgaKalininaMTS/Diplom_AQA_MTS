@@ -26,17 +26,5 @@ public class LoginTest : BaseTest
                 .IncorrectLogin("oa-kalinina@yandex.ru", "123")
                 .ErrorLabel.Text.Trim(),
             Is.EqualTo("Either your email address or your password is wrong. Please try again or recover your password."));
-    }
-
-    /*[Test]
-    [Category("Smoke")]
-    [Category("Regression")]
-    public void SuccessfulAddFileTest()
-    {
-        Logger.Log(LogLevel.Info, "This is an informational message...");
-
-        Assert.That(_navigationSteps.SuccessfulLogin(Admin).TitleLabel.Displayed);
-        DashboardPage dashboardPage = new DashboardPage(Driver);
-        Assert.That(dashboardPage.SuccessFulOpenSettingsUser.TitleLabelProfile.Displayed);
-    }*/
+    }    
 }

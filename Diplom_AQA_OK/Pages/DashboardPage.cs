@@ -16,7 +16,8 @@ namespace Diplom_AQA_OK.Pages
         private static readonly By ProjectDescriptionBy = By.CssSelector("[data-testid='textbox-description']");
         private static readonly By CreateProjectButtonBy = By.CssSelector("[data-testid='button-save-entity']");
         private static readonly By ErrorNewProjectBy = By.CssSelector("[data-testid='button-save-entity']");
-        private static readonly By OpenSettingsButtonBy = By.CssSelector("[data-testid='button-open-dropdown']");
+        //private static readonly By OpenSettingsButtonBy = By.CssSelector("[data-testid='button-open-dropdown']");
+        private static readonly By OpenSettingsButtonBy = By.XPath("//*[@id=root]/div[2]/div/div[4]/div/div/button[2]");
         private static readonly By SettingsButtonBy = By.CssSelector("[data-testid='button-open-dropdown']");
         
 
@@ -47,8 +48,7 @@ namespace Diplom_AQA_OK.Pages
         public IWebElement ProjectDescription => WaitsHelper.WaitForExists(ProjectDescriptionBy);
         public IWebElement CreateProjectButton => WaitsHelper.WaitForExists(CreateProjectButtonBy);
         public IWebElement OpenSettingsButton => WaitsHelper.WaitForExists(OpenSettingsButtonBy);
-        public IWebElement SettingsButton => WaitsHelper.WaitForExists(SettingsButtonBy);
-
+        public IWebElement SettingsButton => WaitsHelper.WaitForExists(SettingsButtonBy);        
 
 
         public NewProjectPage SuccessFulAddNewProj(string nameproj, string projkey, string projdesc)
@@ -70,14 +70,6 @@ namespace Diplom_AQA_OK.Pages
             ProjectDescription.SendKeys(projdesc);
 
             return this;
-        }
-
-        public ProfilePage SuccessFulOpenSettingsUser()
-        {
-            OpenSettingsButton.Click();
-            SettingsButton.Click();            
-
-            return new ProfilePage(Driver);
-        }
+        }        
     }
 }

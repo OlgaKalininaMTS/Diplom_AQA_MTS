@@ -42,6 +42,5 @@ public class ProjectService : IProjectService, IDisposable
     {
         _client?.Dispose();
         GC.SuppressFinalize(this);
-    }
-    
+    }    
 }

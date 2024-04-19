@@ -1,5 +1,4 @@
-﻿using Diplom_AQA_OK.Helpers.Configuration;
-using Diplom_AQA_OK.Models;
+﻿using Diplom_AQA_OK.Models;
 using NLog;
 using System.Net;
 
@@ -12,25 +11,27 @@ public class TestinyApiTest : BaseApiTest
 
     [Test]
     [Order(1)]
+    [Category("Smoke")]
+    [Category("Regression")]
     public void CreateProjectApiTest()
     {
         _project = new Project
         {
-            ProjectName = $"Test33 {DateTime.Now}",
-            Description = "Test Description 33",
-            ProjectKey = "333"
+            ProjectName = $"Test555 {DateTime.Now}",
+            Description = "Test Description 3555",
+            ProjectKey = "555"
         };
 
         var actualProject = ProjectService!.AddProject(_project);
 
         Assert.That(actualProject.Result.ProjectName, Is.EqualTo(_project.ProjectName));
 
-
         _project = actualProject.Result;
     }
 
     [Test]
     [Order(2)]
+    [Category("Smoke")]
     public void GetProjectApiTest()
     {
         var getProject = ProjectService!.GetProject(_project.Id);
@@ -45,6 +46,8 @@ public class TestinyApiTest : BaseApiTest
 
     [Test]
     [Order(3)]
+    [Category("Smoke")]
+    [Category("Regression")]
     public void SuccessDeleteProject()
     {
         var successDelProject = ProjectService!.DeleteProject(_project.Id);
@@ -54,12 +57,10 @@ public class TestinyApiTest : BaseApiTest
 
     [Test]
     [Order(4)]
+    [Category("Regression")]
     public void InvalidDeleteProject()
     {
         var invalidDeleteProject = ProjectService!.DeleteProject(_project.Id);
         Assert.That(invalidDeleteProject, Is.EqualTo(HttpStatusCode.NotFound));
-
     }
-
-
 }
