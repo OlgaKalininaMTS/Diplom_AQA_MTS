@@ -40,6 +40,8 @@ namespace Diplom_AQA_OK.Helpers.Configuration
                 appSettings.URL = child["URL"];
                 appSettings.Username = child["Username"];
                 appSettings.Password = child["Password"];
+                appSettings.ApiKey = child["ApiKey"];
+
 
                 return appSettings;
             }

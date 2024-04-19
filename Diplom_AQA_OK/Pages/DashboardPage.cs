@@ -1,5 +1,4 @@
 ﻿using Diplom_AQA_OK.Helpers;
-using Diplom_AQA_OK.Pages;
 using OpenQA.Selenium;
 
 namespace Diplom_AQA_OK.Pages
@@ -16,6 +15,12 @@ namespace Diplom_AQA_OK.Pages
         private static readonly By ProjectKeyBy = By.CssSelector("[data-testid='textbox-key']");
         private static readonly By ProjectDescriptionBy = By.CssSelector("[data-testid='textbox-description']");
         private static readonly By CreateProjectButtonBy = By.CssSelector("[data-testid='button-save-entity']");
+        private static readonly By ErrorNewProjectBy = By.CssSelector("[data-testid='button-save-entity']");
+        private static readonly By OpenSettingsButtonBy = By.CssSelector("[data-testid='button-open-dropdown']");
+        private static readonly By SettingsButtonBy = By.CssSelector("[data-testid='button-open-dropdown']");
+        
+
+
 
         protected override bool EvaluateLoadedStatus()
         {
@@ -33,10 +38,6 @@ namespace Diplom_AQA_OK.Pages
         {
             return END_POINT;
         }
-        /*public override bool IsPageOpened()
-        {
-            return TitleAddProj.Displayed;
-        }*/
 
         public IWebElement TitleLabel => WaitsHelper.WaitForExists(TitleLabelBy);
         public IWebElement AddProjButton => WaitsHelper.WaitForExists(AddProjButtonBy);
@@ -45,8 +46,12 @@ namespace Diplom_AQA_OK.Pages
         public IWebElement ProjectKey => WaitsHelper.WaitForExists(ProjectKeyBy);
         public IWebElement ProjectDescription => WaitsHelper.WaitForExists(ProjectDescriptionBy);
         public IWebElement CreateProjectButton => WaitsHelper.WaitForExists(CreateProjectButtonBy);
+        public IWebElement OpenSettingsButton => WaitsHelper.WaitForExists(OpenSettingsButtonBy);
+        public IWebElement SettingsButton => WaitsHelper.WaitForExists(SettingsButtonBy);
 
-        public DashboardPage SuccessFulAddNewProj(string nameproj, string projkey, string projdesc)
+
+
+        public NewProjectPage SuccessFulAddNewProj(string nameproj, string projkey, string projdesc)
         {
             AddProjButton.Click();
             NameNewProj.SendKeys(nameproj);
@@ -54,7 +59,25 @@ namespace Diplom_AQA_OK.Pages
             ProjectDescription.SendKeys(projdesc);
             CreateProjectButton.Click();
 
-            return new DashboardPage(Driver);
+            return new NewProjectPage(Driver);
+        }
+
+        public DashboardPage IncorrectNewProj(string nameproj, string projkey, string projdesc)
+        {
+            AddProjButton.Click();
+            NameNewProj.SendKeys(nameproj);
+            ProjectKey.SendKeys(projkey);
+            ProjectDescription.SendKeys(projdesc);
+
+            return this;
+        }
+
+        public ProfilePage SuccessFulOpenSettingsUser()
+        {
+            OpenSettingsButton.Click();
+            SettingsButton.Click();            
+
+            return new ProfilePage(Driver);
         }
     }
 }

@@ -1,4 +1,6 @@
-﻿namespace Diplom_AQA_OK.Models;
+﻿using System.Text.Json.Serialization;
+
+namespace Diplom_AQA_OK.Models;
 
 public class User
 {

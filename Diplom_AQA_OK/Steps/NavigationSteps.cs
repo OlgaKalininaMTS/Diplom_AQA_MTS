@@ -20,6 +20,12 @@ public class NavigationSteps(IWebDriver driver) : BaseSteps(driver)
     }
 
     [AllureStep]
+    public void NavigateToAddProjectPage()
+    {
+        new NewProjectPage(Driver, true);
+    }
+
+    [AllureStep]
     public DashboardPage SuccessfulLogin(User user)
     {
         return Login<DashboardPage>(user);

@@ -1,6 +1,7 @@
-﻿using Diplom_AQA_OK.Helpers.Configuration;
+﻿using Diplom_AQA_OK.Helpers;
 using Diplom_AQA_OK.Pages;
 using Diplom_AQA_OK.Steps;
+using OpenQA.Selenium;
 
 namespace Diplom_AQA_OK.Tests;
 
@@ -14,7 +15,12 @@ public class AddNewProjectTest : BaseTest
         DashboardPage dashboardPage = new DashboardPage(Driver);
 
         dashboardPage.SuccessFulAddNewProj("New Test Project","123","test");
+    }
 
+    [Test]
+    public void InvalidAddProjTest()
+    {
+        
     }
 
 
