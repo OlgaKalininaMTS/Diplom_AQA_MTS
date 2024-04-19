@@ -9,7 +9,7 @@ namespace Diplom_AQA_OK.Pages
         private const string END_POINT = "settings/profile";
 
         // Описание элементов
-        private static readonly By TitleLabelProfileBy = By.XPath("//div[@class = 'sc-hJdEdJ bqYldc']/p");
+        private static readonly By TitleLabelProfileBy = By.XPath("//div[@class = 'sc-hJdEdJ bqYldc']");
 
         protected override bool EvaluateLoadedStatus()
         {

@@ -16,12 +16,4 @@ public class AddNewProjectTest : BaseTest
 
         dashboardPage.SuccessFulAddNewProj("New Test Project","123","test");
     }
-
-    [Test]
-    public void InvalidAddProjTest()
-    {
-        
-    }
-
-
 }

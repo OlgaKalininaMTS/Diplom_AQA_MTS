@@ -14,3 +14,4 @@ namespace Diplom_AQA_OK.Models
         [JsonPropertyName("offset")] public int Offset { get; set; }
         [JsonPropertyName("totalCount")] public int totalCount { get; set; }
     }
+}

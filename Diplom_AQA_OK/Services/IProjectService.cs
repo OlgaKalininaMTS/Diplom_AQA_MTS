@@ -7,8 +7,5 @@ public interface IProjectService
 {
     Task<Project> GetProject(int projectId);
     Task<Project> AddProject(Project project);
-    Task<Projects> GetProjects();
-    HttpStatusCode DeleteProject(string projectId);
-    
-
+    HttpStatusCode DeleteProject(int projectId);
 }

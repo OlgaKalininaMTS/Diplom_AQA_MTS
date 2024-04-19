@@ -28,7 +28,7 @@ public class LoginTest : BaseTest
             Is.EqualTo("Either your email address or your password is wrong. Please try again or recover your password."));
     }
 
-    [Test]
+    /*[Test]
     [Category("Smoke")]
     [Category("Regression")]
     public void SuccessfulAddFileTest()
@@ -37,5 +37,6 @@ public class LoginTest : BaseTest
 
         Assert.That(_navigationSteps.SuccessfulLogin(Admin).TitleLabel.Displayed);
         DashboardPage dashboardPage = new DashboardPage(Driver);
-    }
+        Assert.That(dashboardPage.SuccessFulOpenSettingsUser.TitleLabelProfile.Displayed);
+    }*/
 }

@@ -21,14 +21,6 @@ public class ProjectService : IProjectService, IDisposable
 
         return _client.ExecuteAsync<Project>(request);
     }
-    public Task<Projects> GetProjects()
-    {
-        var request = new RestRequest("api/v1/project");
-
-        var projects = _client.ExecuteAsync<Projects>(request);
-        return projects;
-    }
-
     public Task<Project> AddProject(Project project)
     {
         var request = new RestRequest("api/v1/project", Method.Post)
@@ -37,9 +29,9 @@ public class ProjectService : IProjectService, IDisposable
         return _client.ExecuteAsync<Project>(request);
     }   
 
-    public HttpStatusCode DeleteProject(string projectId)
+    public HttpStatusCode DeleteProject(int projectId)
     {
-        var request = new RestRequest("api/v1/project/{project_id}", Method.Post)
+        var request = new RestRequest("api/v1/project/{project_id}", Method.Delete)
             .AddUrlSegment("project_id", projectId)
             .AddJsonBody("{}");
 
