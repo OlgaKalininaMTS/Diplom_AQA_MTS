@@ -16,7 +16,6 @@ namespace Diplom_AQA_OK.Pages
         private static readonly By ProjectDescriptionBy = By.CssSelector("[data-testid='textbox-description']");
         private static readonly By CreateProjectButtonBy = By.CssSelector("[data-testid='button-save-entity']");
         private static readonly By ErrorNewProjectBy = By.CssSelector("[data-testid='button-save-entity']");
-        //private static readonly By OpenSettingsButtonBy = By.CssSelector("[data-testid='button-open-dropdown']");
         private static readonly By OpenSettingsButtonBy = By.XPath("//*[@id=root]/div[2]/div/div[4]/div/div/button[2]");
         private static readonly By SettingsButtonBy = By.CssSelector("[data-testid='button-open-dropdown']");
         
@@ -51,7 +50,7 @@ namespace Diplom_AQA_OK.Pages
         public IWebElement SettingsButton => WaitsHelper.WaitForExists(SettingsButtonBy);        
 
 
-        public NewProjectPage SuccessFulAddNewProj(string nameproj, string projkey, string projdesc)
+        public NewProjectPage SuccessFulAddNewProject(string nameproj, string projkey, string projdesc)
         {
             AddProjButton.Click();
             NameNewProj.SendKeys(nameproj);
@@ -62,7 +61,7 @@ namespace Diplom_AQA_OK.Pages
             return new NewProjectPage(Driver);
         }
 
-        public DashboardPage IncorrectNewProj(string nameproj, string projkey, string projdesc)
+        public DashboardPage IncorrectNewProject(string nameproj, string projkey, string projdesc)
         {
             AddProjButton.Click();
             NameNewProj.SendKeys(nameproj);

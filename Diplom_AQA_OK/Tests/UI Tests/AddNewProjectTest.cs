@@ -16,7 +16,7 @@ public class AddNewProjectTest : BaseTest
 
         DashboardPage dashboardPage = new DashboardPage(Driver);
 
-        dashboardPage.SuccessFulAddNewProj("New Test Project","123","test");
+        dashboardPage.SuccessFulAddNewProject("New Test Project","123","test");
     }
 
     [Test]
@@ -28,6 +28,6 @@ public class AddNewProjectTest : BaseTest
 
         DashboardPage dashboardPage = new DashboardPage(Driver);
 
-        dashboardPage.IncorrectNewProj("Invalid Test Project", "123456789", "test");
+        dashboardPage.IncorrectNewProject("Invalid Test Project", "123456789", "test");
     }
 }

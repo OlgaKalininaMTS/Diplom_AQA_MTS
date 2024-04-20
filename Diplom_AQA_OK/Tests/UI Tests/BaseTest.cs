@@ -1,9 +1,11 @@
-﻿using Allure.NUnit;
+﻿using Allure.Net.Commons;
+using Allure.NUnit;
 using Diplom_AQA_OK.Core;
 using Diplom_AQA_OK.Helpers.Configuration;
 using Diplom_AQA_OK.Models;
 using Diplom_AQA_OK.Steps;
 using OpenQA.Selenium;
+using System.Text;
 
 namespace Diplom_AQA_OK.Tests;
 
@@ -38,6 +40,22 @@ public class BaseTest
     [TearDown]
     public void TearDown()
     {
+        try
+        {
+            if (TestContext.CurrentContext.Result.Outcome.Status == NUnit.Framework.Interfaces.TestStatus.Failed)
+            {
+                Screenshot screenshot = ((ITakesScreenshot)Driver).GetScreenshot();
+                byte[] screenshotBytes = screenshot.AsByteArray;
+
+                AllureApi.AddAttachment("Screenshot", "image/png", screenshotBytes);
+            }
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            throw;
+        }
+
         Driver.Quit();
     }
 }

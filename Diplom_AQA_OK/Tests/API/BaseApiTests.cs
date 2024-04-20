@@ -1,8 +1,12 @@
 ﻿using Diplom_AQA_OK.Clients;
 using NLog;
 using Diplom_AQA_OK.Services;
+using Allure.NUnit;
 
 namespace Diplom_AQA_OK.Tests;
+
+[Parallelizable(scope: ParallelScope.Fixtures)]
+[AllureNUnit]
 
 public class BaseApiTest
 {

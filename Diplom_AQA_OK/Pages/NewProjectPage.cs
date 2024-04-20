@@ -6,7 +6,8 @@ namespace Diplom_AQA_OK.Pages
 {
     public class NewProjectPage(IWebDriver? driver, bool openByURL = false) : BasePage(driver, openByURL)
     {
-        private const string END_POINT = "123/dashboard";
+        private const string END_POINT = "settings/projects";
+        
 
         // Описание элементов
         private static readonly By TitleLabelNewProjBy = By.CssSelector("[data-testid='text-dashboard-header-content']");
