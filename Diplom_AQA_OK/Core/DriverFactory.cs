@@ -40,6 +40,7 @@ public class DriverFactory
         profile.SetPreference("browser.helperApps.neverAsk.openFile", mimeTypes);
         ffOptions.Profile = profile;
 
+
         ffOptions.SetLoggingPreference(LogType.Browser, LogLevel.All);
         ffOptions.SetLoggingPreference(LogType.Driver, LogLevel.All);
 
