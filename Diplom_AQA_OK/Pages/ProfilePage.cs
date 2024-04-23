@@ -1,5 +1,5 @@
-﻿using Diplom_AQA_OK.Helpers;
-using Diplom_AQA_OK.Pages;
+﻿using Diplom_AQA_OK.Elements;
+using Diplom_AQA_OK.Helpers;
 using OpenQA.Selenium;
 
 namespace Diplom_AQA_OK.Pages
@@ -10,6 +10,8 @@ namespace Diplom_AQA_OK.Pages
 
         // Описание элементов
         private static readonly By TitleLabelProfileBy = By.XPath("//div[@class = 'sc-hJdEdJ bqYldc']");
+        private static readonly By NewAvatarButtonBy = By.XPath("//*[@data-testid='section-drop-area']/button");
+        private static readonly By RemoveAvatarButtonBy = By.XPath("//*[@data-testid='section-drop-area']/div/button");
 
         protected override bool EvaluateLoadedStatus()
         {
@@ -29,6 +31,7 @@ namespace Diplom_AQA_OK.Pages
         }
 
         public IWebElement TitleLabelProfile => WaitsHelper.WaitForExists(TitleLabelProfileBy);
-
+        public UIElement NewAvatarButton => new UIElement(Driver, NewAvatarButtonBy);
+        public Button RemoveAvatarButton => new Button(Driver, RemoveAvatarButtonBy);     
     }
 }

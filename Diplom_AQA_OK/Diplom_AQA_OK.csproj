@@ -49,10 +49,14 @@
 		<None Remove="Resources\chromedriver" />
 		<None Remove="Resources\index.html" />
 		<None Remove="Resources\download.jpeg" />
+		<None Remove="Resource\Shelti.jpeg" />
 		<Content Include="appsettings.json">
 		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 		</Content>
 		<Content Include="NLog.config.general">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="Resource\Shelti.jpeg">
 		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 		</Content>
 		<Content Update="appsettings.json.back">

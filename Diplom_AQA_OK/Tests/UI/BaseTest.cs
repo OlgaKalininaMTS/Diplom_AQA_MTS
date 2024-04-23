@@ -1,11 +1,11 @@
 ﻿using Allure.Net.Commons;
 using Allure.NUnit;
 using Diplom_AQA_OK.Core;
+using Diplom_AQA_OK.Helpers;
 using Diplom_AQA_OK.Helpers.Configuration;
 using Diplom_AQA_OK.Models;
 using Diplom_AQA_OK.Steps;
 using OpenQA.Selenium;
-using System.Text;
 
 namespace Diplom_AQA_OK.Tests;
 
@@ -16,6 +16,7 @@ namespace Diplom_AQA_OK.Tests;
 public class BaseTest
 {
     protected IWebDriver Driver { get; private set; }
+    protected WaitsHelper WaitsHelper { get; private set; }
 
     protected NavigationSteps _navigationSteps;
 
@@ -25,6 +26,7 @@ public class BaseTest
     public void Setup()
     {
         Driver = new Browser().Driver;
+        WaitsHelper = new WaitsHelper(Driver, TimeSpan.FromSeconds(Configurator.WaitsTimeout));
 
         _navigationSteps = new NavigationSteps(Driver);
 
