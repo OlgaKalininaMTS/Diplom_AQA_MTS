@@ -9,10 +9,9 @@ using OpenQA.Selenium;
 
 namespace Diplom_AQA_OK.Tests;
 
-[Parallelizable(scope: ParallelScope.All)]
+[Parallelizable(scope: ParallelScope.Fixtures)]
 [FixtureLifeCycle(LifeCycle.InstancePerTestCase)]
 [AllureNUnit]
-
 public class BaseTest
 {
     protected IWebDriver Driver { get; private set; }

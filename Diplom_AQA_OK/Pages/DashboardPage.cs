@@ -10,7 +10,7 @@ namespace Diplom_AQA_OK.Pages
 
         // Описание элементов
         private static readonly By TitleLabelBy = By.CssSelector("[data-testid='button-projects']");
-        private static readonly By AddProjButtonBy = By.CssSelector("[data-testid='button-create-project']");
+        private static readonly By AddProjButtonBy = By.CssSelector("button.sc-dJGMql.esrPUx.button-main");
         private static readonly By TitleAddProjBy = By.CssSelector("[data-testid='section-project_edit']");
         private static readonly By NameNewProjBy = By.CssSelector("[data-testid='textbox-name']");
         private static readonly By ProjectKeyBy = By.CssSelector("[data-testid='textbox-key']");
