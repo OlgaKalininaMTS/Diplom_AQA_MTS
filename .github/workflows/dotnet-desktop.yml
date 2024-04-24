@@ -37,7 +37,7 @@ jobs:
             
     # Execute all unit tests in the solution
     - name: Execute unit tests
-      run: dotnet test
+      run: dotnet test Diplom_AQA_OK
 
     - name: Load test report history
       uses: actions/checkout@v3
