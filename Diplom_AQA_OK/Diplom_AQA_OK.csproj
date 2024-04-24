@@ -64,4 +64,8 @@
 		</Content>
 	</ItemGroup>
 
+	<ItemGroup>
+	  <None Include=".github\workflow\dotnet-desctop.yml" />
+	</ItemGroup>
+
 </Project>
