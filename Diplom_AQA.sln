@@ -3,7 +3,14 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34309.116
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Diplom_AQA_OK", "Diplom_AQA_OK\Diplom_AQA_OK.csproj", "{33723026-856D-478A-842E-4705879F01EB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Diplom_AQA_OK", "Diplom_AQA_OK\Diplom_AQA_OK.csproj", "{33723026-856D-478A-842E-4705879F01EB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{88C50DEC-C60A-452D-8040-89E3CCE3E356}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflow", "workflow", "{FF4A672B-D77E-438A-A776-3C322665F587}"
+	ProjectSection(SolutionItems) = preProject
+		dotnet-desktop.yml = dotnet-desktop.yml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,6 +25,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{FF4A672B-D77E-438A-A776-3C322665F587} = {88C50DEC-C60A-452D-8040-89E3CCE3E356}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5DEE844D-C5E8-4857-8B0A-57945AF40004}
