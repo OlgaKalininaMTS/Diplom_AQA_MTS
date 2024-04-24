@@ -8,10 +8,10 @@ namespace Diplom_AQA_OK.Pages
         private const string END_POINT = "";
 
         // Описание элементов
-        private static readonly By EmailInputBy = By.CssSelector("[data-testid='textbox-login']");
+        private static readonly By EmailInputBy = By.CssSelector("[data-testid='textbox-login']"); 
         private static readonly By PswInputBy = By.CssSelector("[data-testid='textbox-password']");
         private static readonly By LoginInButtonBy = By.CssSelector("[data-testid='button-login']");
-        private static readonly By ErrorLabelBy = By.XPath("//div[@class = 'sc-jIYCZY gxTmID']/p");
+        private static readonly By ErrorLabelBy = By.XPath("//div[@class ='sc-jIYCZY gxTmID']/p");
 
         // Инициализация класса
 

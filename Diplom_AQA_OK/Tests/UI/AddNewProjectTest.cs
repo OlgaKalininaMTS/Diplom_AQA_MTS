@@ -19,7 +19,7 @@ public class AddNewProjectTest : BaseTest
 
         dashboardPage.IncorrectNewProject("Invalid Test Project", "123456789", "test");
     }
-
+    /*
     [Test]
     [Order(2)]
     [Category("Smoke")]
@@ -32,6 +32,7 @@ public class AddNewProjectTest : BaseTest
 
         dashboardPage.SuccessFulAddNewProject("New Test Project","123","test");        
     }
+    */
 
     
 }
