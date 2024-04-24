@@ -5,6 +5,13 @@ VisualStudioVersion = 17.8.34309.116
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Diplom_AQA_OK", "Diplom_AQA_OK\Diplom_AQA_OK.csproj", "{33723026-856D-478A-842E-4705879F01EB}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{890FA974-0B67-428C-9A07-B0308AFB1793}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{8F25C2D2-472B-470C-BF76-8ACC64200536}"
+	ProjectSection(SolutionItems) = preProject
+		Diplom_AQA_OK\.github\workflow\dotnet.yml = Diplom_AQA_OK\.github\workflow\dotnet.yml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,6 +25,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8F25C2D2-472B-470C-BF76-8ACC64200536} = {890FA974-0B67-428C-9A07-B0308AFB1793}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5DEE844D-C5E8-4857-8B0A-57945AF40004}
