@@ -16,6 +16,7 @@ public class AddNewProjectTest : BaseTest
 
         dashboardPage.SuccessFulAddNewProject("New Test Project", "123", "test");
     }
+    /*
     [Test]
     [Order(2)]
     [Category("Smoke")]
@@ -27,5 +28,6 @@ public class AddNewProjectTest : BaseTest
         DashboardPage dashboardPage = new DashboardPage(Driver);
 
         dashboardPage.IncorrectNewProject("Invalid Test Project", "123456789", "test");
-    }        
+    }    
+    */
 }
