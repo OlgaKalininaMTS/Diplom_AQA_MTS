@@ -8,6 +8,16 @@ on:
     branches: [ "dev" ]
   pull_request:
     branches: [ "dev" ]
+  workflow_dispatch: 
+   inputs: 
+      deployment_target:
+      description: Choose target
+      required: true
+      default: smoke
+      type: choice
+      options:
+        - smoke
+        - regression
 
 jobs:
   test:
@@ -23,8 +33,22 @@ jobs:
       with:
         dotnet-version: 8.0.x
 
-    - name: Run test
-      run: dotnet test
+        # Execute Smoke tests in the solution
+    - name: Execute Smoke tests
+      if: "github.event.inputs.deployment_target == 'smoke'"
+      run: dotnet test --filter Category=Smoke
+      id: smoke
+
+       # Execute Regression tests in the solution
+    - name: Execute Regression tests
+      if: "github.event.inputs.deployment_target == 'regression'"
+      run: dotnet test --filter Category=Regression
+      id: regression
+    
+    # Execute all unit tests in the solution
+    - name: Execute unit tests
+      if: steps.smoke.conclusion == 'skipped' && steps.regression.conclusion == 'skipped'
+      run: dotnet test   
 
     - name: Load test report history
       uses: actions/checkout@v3
