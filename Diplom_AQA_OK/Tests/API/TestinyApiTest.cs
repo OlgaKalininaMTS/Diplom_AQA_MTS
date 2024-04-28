@@ -17,9 +17,9 @@ public class TestinyApiTest : BaseApiTest
     {
         _project = new Project
         {
-            ProjectName = $"Test555 {DateTime.Now}",
-            Description = "Test Description 3555",
-            ProjectKey = "555"
+            ProjectName = $"Test123 {DateTime.Now}",
+            Description = "Test Description 321",
+            ProjectKey = "666"
         };
 
         var actualProject = ProjectService!.AddProject(_project);
